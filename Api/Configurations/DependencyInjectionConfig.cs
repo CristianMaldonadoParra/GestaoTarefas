@@ -1,6 +1,7 @@
 ﻿using Application.Dto.Dtos.Prioridades;
 using Application.Dto.Dtos.Projetos;
 using Application.Dto.Dtos.StatusTarefas;
+using Application.Dto.Dtos.Tarefas;
 using Application.Interfaces;
 using Application.Services;
 using Domain.Interfaces.Repository;
@@ -8,10 +9,12 @@ using Domain.Interfaces.Services;
 using Domain.Services.Prioridades;
 using Domain.Services.Projetos;
 using Domain.Services.StatusTarefas;
+using Domain.Services.Tarefas;
 using FluentValidation;
 using Infrastructure.Data.Repository.Prioridades;
 using Infrastructure.Data.Repository.Projetos;
 using Infrastructure.Data.Repository.StatusTarefas;
+using Infrastructure.Data.Repository.Tarefas;
 
 namespace Api.Configurations
 {
@@ -35,6 +38,11 @@ namespace Api.Configurations
             builder.Services.AddScoped<IPrioridadeService, PrioridadeService>();
             builder.Services.AddScoped<IPrioridadeRepository, PrioridadeRepository>();
             builder.Services.AddScoped<IValidator<PrioridadeDto>, PrioridadeDtoValidator>();
+
+            builder.Services.AddScoped<ITarefaAppService, TarefaAppService>();
+            builder.Services.AddScoped<ITarefaService, TarefaService>();
+            builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
+            builder.Services.AddScoped<IValidator<TarefaDto>, TarefaDtoValidator>();
 
             return builder;
         }

@@ -12,5 +12,6 @@ namespace Infrastructure.Data.Contexts
         public DbSet<Projeto> Projeto { get; set; }
         public DbSet<StatusTarefa> StatusTarefa { get; set; }
         public DbSet<Prioridade> Prioridade { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
     }
 }

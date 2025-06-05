@@ -2,7 +2,7 @@
 
 ###
 # Get a project by ID
-GET {{Api_HostAddress}}/api/Projetos/1
+GET {{Api_HostAddress}}/api/Projetos/2
 Accept: application/json
 
 ###
