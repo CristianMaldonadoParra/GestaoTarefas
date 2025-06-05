@@ -3,7 +3,7 @@ using Application.Dto.Helper;
 using Application.Dto.Mappers;
 using Application.Interfaces;
 using Domain.Common.Model;
-using Domain.Filter.Filters.StatusTarefa;
+using Domain.Filter.Filters.StatusTarefas;
 using Domain.Interfaces.Services;
 
 namespace Application.Services

@@ -1,41 +1,41 @@
-using Application.Dto.Dtos.StatusTarefas;
+using Application.Dto.Dtos.Comentarios;
 using Application.Interfaces;
-using Domain.Filter.Filters.StatusTarefas;
+using Domain.Filter.Filters.Comentarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class StatusTarefasController : ControllerBase
+    public class ComentariosController : ControllerBase
     {
-        private readonly IStatusTarefaAppService _statusTarefaAppService;
+        private readonly IComentarioAppService _comentarioAppService;
 
-        public StatusTarefasController(IStatusTarefaAppService statusTarefaAppService)
+        public ComentariosController(IComentarioAppService comentarioAppService)
         {
-            _statusTarefaAppService = statusTarefaAppService;
+            _comentarioAppService = comentarioAppService;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var result = await _statusTarefaAppService.GetByIdAsync(id);
+            var result = await _comentarioAppService.GetByIdAsync(id);
             if (result == null)
                 return NotFound();
             return Ok(result);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] StatusTarefaFilter filters)
+        public async Task<IActionResult> Get([FromQuery] ComentarioFilter filters)
         {
-            var result = await _statusTarefaAppService.GetWithFilters(filters);
+            var result = await _comentarioAppService.GetWithFilters(filters);
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] StatusTarefaDto dto)
+        public async Task<IActionResult> Create([FromBody] ComentarioDto dto)
         {
-            var result = await _statusTarefaAppService.CreateAsync(dto);
+            var result = await _comentarioAppService.CreateAsync(dto);
             if (result.Model == null)
                 return BadRequest(result);
 
@@ -43,12 +43,12 @@ namespace Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] StatusTarefaDto dto)
+        public async Task<IActionResult> Update(int id, [FromBody] ComentarioDto dto)
         {
             if (id != dto.Id)
                 return BadRequest(new { Message = "ID mismatch" });
 
-            var result = await _statusTarefaAppService.UpdateAsync(dto);
+            var result = await _comentarioAppService.UpdateAsync(dto);
             if (result.Model == null)
                 return NotFound(result);
 
@@ -58,7 +58,7 @@ namespace Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await _statusTarefaAppService.DeleteAsync(id);
+            var result = await _comentarioAppService.DeleteAsync(id);
             return Ok(result);
         }
     }

@@ -2,7 +2,7 @@ using Application.Dto.Dtos.StatusTarefas;
 using Application.Dto.Helper;
 using Domain.Common.Interfaces;
 using Domain.Common.Model;
-using Domain.Filter.Filters.StatusTarefa;
+using Domain.Filter.Filters.StatusTarefas;
 
 namespace Application.Interfaces
 {

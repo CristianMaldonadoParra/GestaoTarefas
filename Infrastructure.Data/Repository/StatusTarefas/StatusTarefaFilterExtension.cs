@@ -1,5 +1,5 @@
 using Domain.Entities;
-using Domain.Filter.Filters.StatusTarefa;
+using Domain.Filter.Filters.StatusTarefas;
 using System.Linq;
 
 namespace Infrastructure.Data.Repository.StatusTarefas

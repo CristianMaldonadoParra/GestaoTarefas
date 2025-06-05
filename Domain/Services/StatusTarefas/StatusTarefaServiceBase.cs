@@ -3,8 +3,8 @@ using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using FluentValidation;
+using Domain.Filter.Filters.StatusTarefas;
 using Application.Dto.Dtos.StatusTarefas;
-using Domain.Filter.Filters.StatusTarefa;
 
 namespace Domain.Services.StatusTarefas
 {

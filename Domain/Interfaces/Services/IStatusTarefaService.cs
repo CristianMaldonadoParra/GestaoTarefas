@@ -1,5 +1,5 @@
 using Application.Dto.Dtos.StatusTarefas;
-using Domain.Filter.Filters.StatusTarefa;
+using Domain.Filter.Filters.StatusTarefas;
 
 namespace Domain.Interfaces.Services
 {

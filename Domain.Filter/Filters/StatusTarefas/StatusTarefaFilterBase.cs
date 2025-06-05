@@ -1,6 +1,6 @@
 using Domain.Common.Filters;
 
-namespace Domain.Filter.Filters.StatusTarefa
+namespace Domain.Filter.Filters.StatusTarefas
 {
     public class StatusTarefaFilterBase : FilterBase
     {
