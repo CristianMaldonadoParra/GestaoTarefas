@@ -1,0 +1,42 @@
+@Api_HostAddress = http://localhost:5000
+
+###
+# Get a project by ID
+GET {{Api_HostAddress}}/api/Projetos/1
+Accept: application/json
+
+###
+# Get all projects with filters
+GET {{Api_HostAddress}}/api/Projetos?IsPagination=true&PageIndex=1&PageSize=5
+Accept: application/json
+
+###
+# Create a new project
+POST {{Api_HostAddress}}/api/Projetos
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 0,
+    "nome": "Projeto Exemplo 1",
+    "descricao": "Descrição do projeto 1",
+    "dataCriacao": "2024-06-04T00:00:00"
+}
+
+###
+# Update an existing project
+PUT {{Api_HostAddress}}/api/Projetos/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 1,
+    "nome": "Projeto 1 Atualizado",
+    "descricao": "Descrição atualizada",
+    "dataCriacao": "2024-06-04T00:00:00"
+}
+
+###
+# Delete a project by ID
+DELETE {{Api_HostAddress}}/api/Projetos/1
+Accept: application/json
