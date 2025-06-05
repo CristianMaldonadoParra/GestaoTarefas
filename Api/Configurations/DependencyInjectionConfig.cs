@@ -1,16 +1,23 @@
-﻿using Application.Dto.Dtos.Prioridades;
+﻿using Application.Dto.Dtos.Comentarios;
+using Application.Dto.Dtos.HistoricoAtualizacoes;
+using Application.Dto.Dtos.Prioridades;
 using Application.Dto.Dtos.Projetos;
 using Application.Dto.Dtos.StatusTarefas;
 using Application.Dto.Dtos.Tarefas;
 using Application.Interfaces;
 using Application.Services;
+using Application.Validators;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
+using Domain.Services.Comentarios;
+using Domain.Services.HistoricoAtualizacoes;
 using Domain.Services.Prioridades;
 using Domain.Services.Projetos;
 using Domain.Services.StatusTarefas;
 using Domain.Services.Tarefas;
 using FluentValidation;
+using Infrastructure.Data.Repository.Comentarios;
+using Infrastructure.Data.Repository.HistoricoAtualizacoes;
 using Infrastructure.Data.Repository.Prioridades;
 using Infrastructure.Data.Repository.Projetos;
 using Infrastructure.Data.Repository.StatusTarefas;
@@ -43,6 +50,17 @@ namespace Api.Configurations
             builder.Services.AddScoped<ITarefaService, TarefaService>();
             builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
             builder.Services.AddScoped<IValidator<TarefaDto>, TarefaDtoValidator>();
+
+            builder.Services.AddScoped<IComentarioAppService, ComentarioAppService>();
+            builder.Services.AddScoped<IComentarioService, ComentarioService>();
+            builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
+            builder.Services.AddScoped<IValidator<ComentarioDto>, ComentarioDtoValidator>();
+
+            builder.Services.AddScoped<IHistoricoAtualizacaoAppService, HistoricoAtualizacaoAppService>();
+            builder.Services.AddScoped<IHistoricoAtualizacaoService, HistoricoAtualizacaoServiceBase>();
+            builder.Services.AddScoped<IHistoricoAtualizacaoRepository, HistoricoAtualizacaoRepository>();
+            builder.Services.AddScoped<IValidator<HistoricoAtualizacaoDto>, HistoricoAtualizacaoDtoValidator>();
+
 
             return builder;
         }
