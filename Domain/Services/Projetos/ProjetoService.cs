@@ -26,7 +26,7 @@ namespace Domain.Services.Projetos
                 return new ProjetoResult
                 {
                     ValidationResult = validationResult,
-                    Message = "Exclusão não permitida"
+                    Message = "Exclusão não permitida - Para remover um projeto tem que realizar a conclusão ou remoção das tarefas primeiro"
                 };
             }
 
