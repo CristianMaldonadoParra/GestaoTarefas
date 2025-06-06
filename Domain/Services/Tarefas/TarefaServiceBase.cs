@@ -10,8 +10,8 @@ namespace Domain.Services.Tarefas
 {
     public class TarefaServiceBase : ITarefaService
     {
-        private readonly ITarefaRepository _tarefaRepository;
-        private readonly IValidator<TarefaDto> _validator;
+        protected readonly ITarefaRepository _tarefaRepository;
+        protected readonly IValidator<TarefaDto> _validator;
 
         public TarefaServiceBase(ITarefaRepository tarefaRepository, IValidator<TarefaDto> validator)
         {

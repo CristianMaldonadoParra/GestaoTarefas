@@ -16,7 +16,7 @@ namespace Domain.Services.Tarefas
 
         public override async Task<TarefaResult> Create(TarefaDto dto)
         {
-            var tarefasPendentes = await this.GetWithFilters(new TarefaFilter { ProjetoId = dto.ProjetoId, IsPagination = false });
+            var tarefasPendentes = await _tarefaRepository.GetWithFilters(new TarefaFilter { ProjetoId = dto.ProjetoId, IsPagination = false });
 
             if(tarefasPendentes.TotalCount >= TarefasConst.LimiteTarefasPorProjeto)
             {
@@ -31,5 +31,23 @@ namespace Domain.Services.Tarefas
 
             return await base.Create(dto);
         }
+
+        public override async Task<TarefaResult> Update(TarefaDto dto)
+        {
+            var tarefaComMesmaPrioridade = await _tarefaRepository.GetById(dto.Id);
+
+            if(tarefaComMesmaPrioridade != null && tarefaComMesmaPrioridade.PrioridadeId != dto.PrioridadeId)
+            {
+                var validationResult = ValidationResultHelper.BusinessRule("Tarefa", "Não é permitido alterar a prioridade de uma tarefa depois que ela foi criada.");
+                return new TarefaResult
+                {
+                    ValidationResult = validationResult,
+                    Message = "Atualização não permitida - Prioridade já está definido"
+                };
+            }
+
+            return await base.Update(dto);
+        }
+
     }
 }
