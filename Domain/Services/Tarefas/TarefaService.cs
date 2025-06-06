@@ -1,4 +1,7 @@
 using Application.Dto.Dtos.Tarefas;
+using Application.Dto.Helper;
+using Domain.Constant;
+using Domain.Filter.Filters.Tarefas;
 using Domain.Interfaces.Repository;
 using FluentValidation;
 
@@ -9,6 +12,24 @@ namespace Domain.Services.Tarefas
         public TarefaService(ITarefaRepository tarefaRepository, IValidator<TarefaDto> validator)
             : base(tarefaRepository, validator)
         {
+        }
+
+        public override async Task<TarefaResult> Create(TarefaDto dto)
+        {
+            var tarefasPendentes = await this.GetWithFilters(new TarefaFilter { ProjetoId = dto.ProjetoId, IsPagination = false });
+
+            if(tarefasPendentes.TotalCount >= TarefasConst.LimiteTarefasPorProjeto)
+            {
+                var validationResult = ValidationResultHelper.BusinessRule("Projeto", $"Não é possível criar mais tarefas, o limite de {TarefasConst.LimiteTarefasPorProjeto} foi atingido.");
+                return new TarefaResult
+                {
+                    ValidationResult = validationResult,
+                    Message = "Limite de tarefas atingido"
+                };
+            }
+
+
+            return await base.Create(dto);
         }
     }
 }

@@ -40,3 +40,62 @@ Accept: application/json
 # Delete a project by ID
 DELETE {{Api_HostAddress}}/api/Projetos/1
 Accept: application/json
+
+
+
+
+
+
+
+
+
+
+
+### 
+# Create a new Tarefa
+POST {{Api_HostAddress}}/api/Tarefas
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 0,
+    "projetoId": 2,
+    "titulo": "Nova tarefa 3",
+    "descricao": "Descrição da tarefa",
+    "dataVencimento": "2025-06-10T00:00:00",
+    "statusId": 1,
+    "prioridadeId": 2,
+    "dataCriacao": "2025-06-06T00:00:00"
+}
+
+###
+# Get a Tarefa by ID
+GET {{Api_HostAddress}}/api/Tarefas/1
+Accept: application/json
+
+###
+# Get all Tarefas with filters
+GET {{Api_HostAddress}}/api/Tarefas?projetoId=1&statusId=1
+Accept: application/json
+
+###
+# Update an existing Tarefa
+PUT {{Api_HostAddress}}/api/Tarefas/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 1,
+    "projetoId": 1,
+    "titulo": "Tarefa atualizada",
+    "descricao": "Descrição atualizada",
+    "dataVencimento": "2025-06-15T00:00:00",
+    "statusId": 2,
+    "prioridadeId": 3,
+    "dataCriacao": "2025-06-06T00:00:00"
+}
+
+###
+# Delete a Tarefa by ID
+DELETE {{Api_HostAddress}}/api/Tarefas/1
+Accept: application/json
