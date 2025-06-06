@@ -83,6 +83,7 @@ namespace Application.Services
 
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
         }
     }
 }

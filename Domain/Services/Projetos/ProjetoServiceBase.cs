@@ -10,7 +10,7 @@ namespace Domain.Services.Projetos
 {
     public class ProjetoServiceBase : IProjetoService
     {
-        private readonly IProjetoRepository _projetosRepository;
+        private readonly IProjetoRepository _projetosRepository;        
         private readonly IValidator<ProjetoDto> _validator;
 
         public ProjetoServiceBase(IProjetoRepository projetosRepository, IValidator<ProjetoDto> validator)
