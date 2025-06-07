@@ -26,6 +26,7 @@ namespace Domain.Entities
         public int PrioridadeId { get; set; }
         public DateTime DataCriacao { get; set; }
 
+        public void SetId(int id) => Id = id;
         public void SetTitulo(string titulo) => Titulo = titulo;
         public void SetDescricao(string? descricao) => Descricao = descricao;
         public void SetDataVencimento(DateTime? dataVencimento) => DataVencimento = dataVencimento;

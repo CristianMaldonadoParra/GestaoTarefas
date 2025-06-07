@@ -23,7 +23,7 @@ namespace Domain.Entities
         }
         public void SetAutor(string value)
         {
-            Texto = value;
+            Autor = value;
         }
     }
 }

@@ -21,5 +21,7 @@ namespace Domain.Entities
             ValorNovo = valorNovo;
             DataAlteracao = DateTime.Now;
         }
+
+        public void SetId(int id) => Id = id;
     }
 }
