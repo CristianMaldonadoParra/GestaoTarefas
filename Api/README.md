@@ -35,7 +35,7 @@ docker build -t Api .
 
 
 
-
+### executar o scriptTeste.sql dentro do SQL Server e verificar o appsetting verificando os dados de acesso no banco de dados
 
 
 
