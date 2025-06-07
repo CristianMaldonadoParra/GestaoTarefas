@@ -1,5 +1,6 @@
 using Application.Dto.Dtos.Comentarios;
 using Application.Dto.Helper;
+using Domain.Constant;
 using Domain.Entities;
 using Domain.Filter.Filters.Comentarios;
 using Domain.Interfaces.Repository;
@@ -64,7 +65,8 @@ namespace Domain.Services.Comentarios
             if (!validationResult.IsValid)
                 return new ComentarioResult { ValidationResult = validationResult };
 
-            var comentario = new Comentario(dto.TarefaId, dto.Autor, dto.Texto);
+            var comentario = new Comentario(dto.TarefaId, dto.Texto);
+            comentario.SetAutor(UsuarioServiceExternoConst.UserName);
             var result = _comentarioRepository.Add(comentario);
             await _comentarioRepository.CommitAsync();
 

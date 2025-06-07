@@ -10,10 +10,9 @@ namespace Domain.Entities
 
         public Comentario() { }
 
-        public Comentario(int tarefaId, string autor, string texto)
+        public Comentario(int tarefaId, string texto)
         {
             TarefaId = tarefaId;
-            Autor = autor;
             Texto = texto;
             DataCriacao = DateTime.Now;
         }
@@ -21,6 +20,10 @@ namespace Domain.Entities
         public void SetTexto(string texto)
         {
             Texto = texto;
+        }
+        public void SetAutor(string value)
+        {
+            Texto = value;
         }
     }
 }

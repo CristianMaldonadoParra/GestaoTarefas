@@ -99,3 +99,67 @@ Accept: application/json
 # Delete a Tarefa by ID
 DELETE {{Api_HostAddress}}/api/Tarefas/1
 Accept: application/json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+# Create a new Comentario
+POST {{Api_HostAddress}}/api/Comentarios
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 0,
+  "tarefaId": 1,
+  "autor": "Admin Sistema",
+  "texto": "Comentário inicial sobre a tarefa.",
+  "dataCriacao": "2025-06-07T10:00:00"
+}
+
+###
+# Get a Comentario by ID
+GET {{Api_HostAddress}}/api/Comentarios/1
+Accept: application/json
+
+###
+# Get all Comentarios by TarefaId
+GET {{Api_HostAddress}}/api/Comentarios?tarefaId=1
+Accept: application/json
+
+###
+# Update an existing Comentario
+PUT {{Api_HostAddress}}/api/Comentarios/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "tarefaId": 1,
+  "autor": "João da Silva",
+  "texto": "Comentário atualizado.",
+  "dataCriacao": "2025-06-07T10:00:00"
+}
+
+###
+# Delete a Comentario by ID
+DELETE {{Api_HostAddress}}/api/Comentarios/1
+Accept: application/json
+
