@@ -6,5 +6,6 @@ namespace Domain.Interfaces.Repository
 {
     public interface ITarefaRepository : IRepository<Tarefa, TarefaFilter>
     {
+        Task<List<Tarefa>> ObterMediaTarefasConcluidasPorUsuarioUltimos30DiasAsync();
     }
 }

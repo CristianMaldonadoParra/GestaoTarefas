@@ -5,6 +5,7 @@ using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
 using FluentValidation;
 using Application.Dto.Dtos.Tarefas;
+using Domain.Constant;
 
 namespace Domain.Services.Tarefas
 {
@@ -70,7 +71,16 @@ namespace Domain.Services.Tarefas
             if (!validationResult.IsValid)
                 return new TarefaResult { ValidationResult = validationResult };
 
-            var tarefa = new Tarefa(dto.ProjetoId, dto.Titulo, dto.Descricao, dto.DataVencimento, dto.StatusId, dto.PrioridadeId, dto.DataCriacao);
+            var tarefa = new Tarefa(dto.ProjetoId, 
+                                    dto.Titulo, 
+                                    dto.Descricao, 
+                                    dto.DataVencimento, 
+                                    dto.StatusId, 
+                                    dto.PrioridadeId, 
+                                    dto.DataCriacao, 
+                                    UsuarioServiceExternoConst.UserName);            
+            
+            
             var result = _tarefaRepository.Add(tarefa);
             await _tarefaRepository.CommitAsync();
 

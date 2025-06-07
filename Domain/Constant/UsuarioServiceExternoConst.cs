@@ -2,6 +2,6 @@
 {
     public static class UsuarioServiceExternoConst
     {
-        public const string UserName = "Usuario Admin";
+        public const string UserName = "Usuario Gerente";
     }
 }

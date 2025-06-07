@@ -1,5 +1,6 @@
 using Domain.Common.Orm;
 using Domain.Entities;
+using Domain.Enums.Enums;
 using Domain.Filter.Filters.Tarefas;
 using Domain.Interfaces.Repository;
 using Infrastructure.Data.Contexts;
@@ -71,6 +72,13 @@ namespace Infrastructure.Data.Repository.Tarefas
         public async Task<int> CommitAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<Tarefa>> ObterMediaTarefasConcluidasPorUsuarioUltimos30DiasAsync()
+        {
+            var result = await _dbSet.Where(t => t.StatusId == (int)EStatusTarefa.Concluida && t.DataVencimento >= DateTime.Now.AddDays(-30)).ToListAsync();
+            return result;
+
         }
     }
 }

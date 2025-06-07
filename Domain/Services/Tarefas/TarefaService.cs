@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Application.Dto.Dtos.Tarefas;
 using Application.Dto.Helper;
 using Domain.Constant;
