@@ -1,10 +1,10 @@
-﻿# 🧩 API .NET com Docker
+﻿# API .NET com Docker
 
 Este projeto é uma API RESTful desenvolvida com .NET 9.0, estruturada em camadas e preparada para execução em containers Docker.
 
 ---
 
-## 📦 Estrutura da Solução
+## Estrutura da Solução
 
 A solução está dividida nos seguintes projetos:
 
@@ -17,16 +17,16 @@ A solução está dividida nos seguintes projetos:
 
 ---
 
-## 🚀 Executando com Docker
+## Executando com Docker
 
-### ✔️ Pré-requisitos
+### Pré-requisitos
 
 - [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Docker](https://www.docker.com/)
 
 ---
 
-### 🏗️ Construção da imagem
+### Construção da imagem
 
 Abra o terminal na raiz do projeto (onde está o `Dockerfile`) e execute:
 
@@ -41,7 +41,7 @@ docker build -t Api .
 
 ---
 
-## 📌 Refinamento com o PO
+### Refinamento com o PO
 
 Durante o desenvolvimento da API, algumas decisões podem ser melhor embasadas com a colaboração do Product Owner (PO). Abaixo está uma sugestão de pergunta para discussão em sessões de refinamento, com o objetivo de antecipar melhorias e alinhar o comportamento esperado do sistema:
 
