@@ -1,41 +1,46 @@
-﻿{
-    "$schema": "https://json.schemastore.org/launchsettings.json",
-    "profiles": {
-        "http - Development": {
-            "commandName": "Project",
-            "dotnetRunMessages": true,
-            "launchBrowser": false,
-            "applicationUrl": "http://localhost:5000",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
-        },
-        "http - Homolog": {
-            "commandName": "Project",
-            "dotnetRunMessages": true,
-            "launchBrowser": false,
-            "applicationUrl": "http://localhost:6000",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Homolog"
-            }
-        },
-        "http - Production": {
-            "commandName": "Project",
-            "dotnetRunMessages": true,
-            "launchBrowser": false,
-            "applicationUrl": "http://localhost:6000",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Production"
-            }
-        },
-        "https": {
-            "commandName": "Project",
-            "dotnetRunMessages": true,
-            "launchBrowser": false,
-            "applicationUrl": "http://localhost:5179",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
-        }
+{
+  "profiles": {
+    "http - Development": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5000"
+    },
+    "http - Homolog": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Homolog"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:6000"
+    },
+    "http - Production": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:6000"
+    },
+    "https": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5179"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "ASPNETCORE_HTTP_PORTS": "8080"
+      },
+      "publishAllPorts": true,
+      "useSSL": false
     }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
 }
